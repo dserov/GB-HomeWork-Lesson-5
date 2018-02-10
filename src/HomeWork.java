@@ -1,3 +1,10 @@
+/**
+ * Java1 Homework 5
+ *
+ * @author DSerov
+ * @version dated 10 Feb, 2018
+ * @link https://github.com/dserov/
+ */
 public class HomeWork {
     private Person persons[];
 

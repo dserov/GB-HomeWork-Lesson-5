@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="GB HomeWork Lesson 5:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GB_HomeWork_Lesson_5_jar</output-path>
+    <root id="root">
+      <element id="archive" name="GB HomeWork Lesson 5.jar">
+        <element id="module-output" name="GB HomeWork Lesson 5" />
+      </element>
+    </root>
+  </artifact>
+</component>
