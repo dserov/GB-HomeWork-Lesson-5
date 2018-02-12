@@ -3,6 +3,7 @@
  *
  * @author DSerov
  * @version dated 09 feb, 2018
+ * @link https://github.com/dserov/GB-HomeWork-Lesson-5/
  */
 public class Person {
     /**

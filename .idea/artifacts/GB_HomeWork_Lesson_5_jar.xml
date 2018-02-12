@@ -4,6 +4,7 @@
     <root id="root">
       <element id="archive" name="GB HomeWork Lesson 5.jar">
         <element id="module-output" name="GB HomeWork Lesson 5" />
+        <element id="library" level="project" name="com.google.code.gson:gson:2.8.2" />
       </element>
     </root>
   </artifact>

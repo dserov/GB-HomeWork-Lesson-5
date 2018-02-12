@@ -1,27 +1,33 @@
+import java.io.File;
+import java.io.IOException;
+
 /**
- * Java1 Homework 5
+ * Java-1 Homework 5
  *
  * @author DSerov
  * @version dated 10 Feb, 2018
- * @link https://github.com/dserov/
+ * @link https://github.com/dserov/GB-HomeWork-Lesson-5/
  */
 public class HomeWork {
-    private Person persons[];
+    public static void main(String[] args) throws IOException {
+        PersonManager personManager = new PersonManager(5);
 
-    public static void main(String[] args) {
-        HomeWork homeWork = new HomeWork();
-        homeWork.initPerson();
-        for (Person person : homeWork.persons)
-            if (person.getAge() > 40)
-                System.out.println(person.toString());
-    }
+        String fileName = "persons.json";
+        // есть ли уже файл
+        boolean alreadyExists = new File(fileName).isFile();
+        if (!alreadyExists) {
+            // проинициализируме 5-ю сотрудниками
+            personManager.initPerson();
+            // вывод в файл
+            personManager.savePersonsToFile(fileName);
+            System.out.println("Файл " + fileName + " создан!");
+        } else {
+            // прочитаем данные из файла
+            personManager.loadPersonsFromFile(fileName);
+            System.out.println("Файл " + fileName + " прочитан!");
 
-    private void initPerson() {
-        persons = new Person[5];
-        persons[0] = new Person("Ivanov Ivan", "Ingener", "person1@gmail.com", "89821234567", 10000, 25);
-        persons[1] = new Person("Petrov Petr", "Teacher", "person2@gmail.com", "89821789567", 20000, 35);
-        persons[2] = new Person("Sidorov Sidr", "Programmer", "person3@gmail.com", "89821314567", 30000, 45);
-        persons[3] = new Person("Smirnov Sasha", "SysAdmin", "person4@gmail.com", "89821234567", 40000, 50);
-        persons[4] = new Person("Nemiroff Alex", "Uborszitsa", "person5@gmail.com", "89845234567", 50000, 55);
+            // вывод всех сотрудников сташе 40 лет
+            personManager.printInfo(40);
+        }
     }
 }
